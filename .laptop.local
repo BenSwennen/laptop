@@ -1,0 +1,35 @@
+#!/bin/sh
+
+brew bundle --file=- <<EOF
+tap homebrew/cask-eid
+brew "awscli"
+brew "git-extras"
+brew "mas"
+brew "python"
+brew "python3"
+brew "zsh"
+brew "zsh-completions"
+cask "1password"
+cask "authy"
+cask "dash"
+cask "eid-pt"
+cask "firefox"
+cask "gimp"
+cask "goofy"
+cask "google-chrome"
+cask "iterm2"
+cask "ngrok"
+cask "pgadmin4"
+cask "postman"
+cask "slack"
+cask "spotify"
+cask "virtualbox"
+cask "visual-studio-code"
+cask "vlc"
+cask "whatsapp"
+mas install 937984704
+EOF
+
+fancy_echo "Cleaning up old Homebrew formulae ..."
+brew cleanup
+brew cask cleanup
