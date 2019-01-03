@@ -1,12 +1,14 @@
 #!/bin/sh
 
-brew bundle --file=- <<EOF
 tap homebrew/cask-eid
+
+brew bundle --file=- <<EOF
 brew "awscli"
 brew "git-extras"
 brew "mas"
 brew "python"
 brew "python3"
+brew "tig"
 brew "zsh"
 brew "zsh-completions"
 cask "1password"
@@ -27,8 +29,9 @@ cask "virtualbox"
 cask "visual-studio-code"
 cask "vlc"
 cask "whatsapp"
-mas install 937984704
 EOF
+
+mas install 937984704
 
 fancy_echo "Cleaning up old Homebrew formulae ..."
 brew cleanup
